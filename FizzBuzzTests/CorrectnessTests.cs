@@ -7,19 +7,17 @@ using NUnit.Common;
 using NUnit.Framework;
 using FizzBuzz;
 
-namespace fbTest
+namespace FizzBuzzTests
 {
     [TestFixture]
-    public class Class1
+    public class CorrectnessTests
     {
         [Test]
         public void bothFizzBuzz()
         {
             FizzBuzz.FizzBuzz fb = new FizzBuzz.FizzBuzz();
-            List<string> fbResults = fb.GetFizzBuzz(15);
-            Assert.AreEqual(fbResults[14], "FizzBuzz");
+            int i = 15;
+            Assert.AreEqual(fb[i-1], "FizzBuzz");
         }
-
-        
     }
 }

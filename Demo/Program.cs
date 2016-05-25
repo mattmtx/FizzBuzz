@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FizzBuzz;
 
-namespace FizzBuzz
+namespace FizzBuzzDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            FizzBuzz fb = new FizzBuzz();
+            FizzBuzz.FizzBuzz fb = new FizzBuzz.FizzBuzz();
             Console.WriteLine("Value of index 5:");
             Console.WriteLine(fb[5]);
             Console.WriteLine("=================");
