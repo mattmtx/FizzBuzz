@@ -8,36 +8,30 @@ namespace FizzBuzz
 {
     public class FizzBuzz
     {
-        private List<string> _FizzBuzzRes;
-  
-        private void GenFizzBuzz(int upperBound)
+        private string fizzBuzzGenerator(int i)
         {
-            for (int i = 1; i <= upperBound; i++)
-            {
-                if (i % 3 != 0 && i % 5 != 0)
-                    _FizzBuzzRes.Add(i.ToString());
-                else
-                {
-                    if (i % 3 == 0 && i % 5 == 0)
-                    {
-                        _FizzBuzzRes.Add("FizzBuzz");
-                    }
-                    else
-                    {
-                        if (i % 3 == 0)
-                            _FizzBuzzRes.Add("Fizz");
-                        if (i % 5 == 0)
-                            _FizzBuzzRes.Add("Buzz");
-                    }
-                }
-            }
+            if (i % 3 != 0 && i % 5 != 0)
+                return i.ToString();
+            if (i % 15 == 0)
+                return "FizzBuzz";
+            if (i % 3 == 0)
+                return "Fizz";
+            if (i % 5 == 0)
+                return "Buzz";
+            return null;
         }
 
-        public List<string> GetFizzBuzz(int upperBound)
+        public string this[int i]
         {
-            this._FizzBuzzRes = new List<string>();
-            GenFizzBuzz(upperBound);
-            return this._FizzBuzzRes;
+            get { return fizzBuzzGenerator(i+1); }
+        }
+
+        public IEnumerable<string> GetFizzBuzz(int upperBound)
+        {
+            for(int i = 1; i <= upperBound; i++)
+            {
+                yield return fizzBuzzGenerator(i);
+            }
         }
     }
 }
