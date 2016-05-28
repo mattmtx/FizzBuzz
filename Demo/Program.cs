@@ -1,6 +1,6 @@
-﻿using System;
+﻿using FizzBuzzNS;
+using System;
 using System.Collections.Generic;
-using FizzBuzzNS;
 
 namespace FizzBuzzDemo
 {
