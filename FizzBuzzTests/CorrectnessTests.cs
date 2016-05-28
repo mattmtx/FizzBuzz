@@ -14,7 +14,7 @@ namespace FizzBuzzTests
         string word1, word2;
         TestUtils util = new TestUtils();
 
-        [OneTimeSetUp]
+        [SetUp]
         public void Init()
         {
             multiple1 = fb.MultipleNamePair[0].Key;
